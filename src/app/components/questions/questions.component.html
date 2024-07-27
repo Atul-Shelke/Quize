@@ -1,0 +1,40 @@
+<div class="quiz-container mt-2" id="quiz" >
+     <h1 class="text-center">Quiz Game</h1>
+    <h2 id="question">{{questions[currentQuestionIndex]?.question}}</h2>
+    <div class="loading-bar ">
+      <div class="loading-bar-progress" id="loading-bar-progress"></div>
+    </div>
+    <ul>
+      <!-- <li  *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index">
+        <input type="radio" name="answer" id="a" class="answer" [(ngModel)]="selectedAnswer">
+        <label for="a" id="a_text">{{option.answer}}</label>
+      </li> -->
+      <li *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index">
+        <input type="radio" name="answer" id="option{{currentQuestionIndex}}_{{i}}" class="answer" 
+            [value]="option" [(ngModel)]="selectedAnswer"  [ngClass]="{'correct': isAnswerChecked && option.isCorrect, 'wrong': isAnswerChecked && !option.isCorrect}" >
+        <label for="option{{currentQuestionIndex}}_{{i}}" >{{option.answer}}</label>
+    </li>
+      <!-- <li>
+        <input type="radio" name="answer" id="b" class="answer">
+        <label for="b" id="b_text">Answer</label>
+      </li>
+      <li>
+        <input type="radio" name="answer" id="c" class="answer">
+        <label for="c" id="c_text">Answer</label>
+      </li>
+      <li>
+        <input type="radio" name="answer" id="d" class="answer">
+        <label for="d" id="d_text">Answer</label>
+      </li> -->
+    </ul>
+    <div class="d-flex justify-content-between align-items-center">
+      {{correctAnswerNumber}}   {{incorrectAnswerNumber}}
+    <button type="submit" class="btn btn-primary" (click)="nextQuestions()" [disabled]="questions.length-1==currentQuestionIndex">Next <i class="fa-solid fa-chevron-right"></i></button>
+
+    <button type="submit" (click)="submitAnswer()">Submit</button>
+
+    <button type="submit" class="btn btn-primary" (click)="previousQuestions()" [disabled]="currentQuestionIndex===0">Back <i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+     <button class="btn btn-primary" (click)="restartQuiz()" [disabled]="currentQuestionIndex === 0 && incorrectAnswerNumber === 0">Restart Quiz</button>
+  </div>
+  

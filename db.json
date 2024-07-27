@@ -1,0 +1,71 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "which of the following is correct about Typescript?",
+      "options": [
+           {
+              "answer":"Angular is based on Typescript",
+              "isCorrect":false
+           },
+           {
+              "answer":"This is superset of javascript.",
+              "isCorrect":false
+           },
+           {
+              "answer":"Typescript maintain by microsoft.",
+              "isCorrect":false
+           },
+           {
+              "answer":"All Of the Above",
+              "isCorrect":true
+           }
+      ]
+    },
+    {
+       "id":2,
+       "question":"What is your name?",
+       "options":[
+          {
+            "answer":"Atul",
+            "isCorrect":true
+          },
+          {
+            "answer":"Rahul",
+            "isCorrect":false
+          },
+          {
+            "answer":"Bala",
+            "isCorrect":false
+          },
+          {
+            "answer":"prasad",
+            "isCorrect":false
+          }
+       ]
+    },
+    {
+      "id":3,
+      "question":"Who won the word cup match?",
+      "options":[
+         {
+            "answer":"Australia",
+            "isCorrect":false
+         },
+         {
+            "answer":"Pakistan",
+            "isCorrect":false
+         },
+         {
+            "answer":"Englad",
+            "isCorrect":false
+         },
+         {
+            "answer":"India",
+            "isCorrect":true
+         }
+      ]
+    }
+  ]
+  
+}
